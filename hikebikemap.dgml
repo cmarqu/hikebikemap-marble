@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgml xmlns="http://edu.kde.org/marble/dgml/2.0">
+    <document>
+
+        <head>
+            <name>OSM Hike&amp;Bike Map</name>
+            <target>earth</target>
+            <theme>hikebikemap</theme>
+            <icon pixmap="preview.png"/>
+            <visible>true</visible>
+            <description><![CDATA[<p>A <i>global hike and bike map</i> with OpenStreetMap data.]]></description>
+            <zoom>
+                <minimum> 900 </minimum>
+                <maximum> 3700 </maximum>
+                <discrete> true </discrete>
+            </zoom>
+        </head>
+
+        <map bgcolor="#000000">
+            <canvas/>
+            <target/>
+            <layer name="hikebikemap" backend="texture" >
+                <!-- Let tiles expire after one year or 31536000 seconds -->
+                <texture name="map" expire="31536000" >
+                    <sourcedir format="PNG"> earth/hikebikemap </sourcedir>
+                    <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="Custom" />
+                    <projection name="Mercator" />
+                    <downloadUrl protocol="http" host="toolserver.org" path="/tiles/hikebike/{zoomLevel}/{x}/{y}.png" />
+                </texture>
+                <texture name="hillshading" expire="31536000" >
+                    <sourcedir format="PNG"> earth/hikebikemap/hillshading </sourcedir>
+                    <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="Custom" />
+                    <projection name="Mercator" />
+                    <downloadUrl protocol="http" host="toolserver.org" path="/~cmarqu/hill/{zoomLevel}/{x}/{y}.png" />
+<!--                    <blending name="ScreenBlending" />-->
+<!--                    <blending name="GammaLightBlending" />-->
+                    <blending name="AllanonBlending" />
+                </texture>
+                <texture name="lighting" expire="31536000" >
+                    <sourcedir format="PNG"> earth/hikebikemap/lighting </sourcedir>
+                    <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="Custom" />
+                    <projection name="Mercator" />
+                    <downloadUrl protocol="http" host="toolserver.org" path="/tiles/lighting/{zoomLevel}/{x}/{y}.png" />
+<!--                    <blending name="ScreenBlending" />-->
+<!--                    <blending name="GammaLightBlending" />-->
+                    <blending name="AllanonBlending" />
+                </texture>
+            </layer>
+            <layer name="standardplaces" backend="geodata">
+               <geodata name="cityplacemarks">
+                    <sourcefile format="KML">cityplacemarks.kml</sourcefile>
+                    <pick>placemark</pick>
+                </geodata>
+                <geodata name="baseplacemarks">
+                    <sourcefile format="KML">baseplacemarks.kml</sourcefile>
+                    <pick>placemark</pick>
+                </geodata>
+                <geodata name="elevplacemarks">
+                    <sourcefile format="KML">elevplacemarks.kml</sourcefile>
+                    <pick>placemark</pick>
+                </geodata>
+                <geodata name="otherplacemarks">
+                    <sourcefile
+                    format="KML">otherplacemarks.kml</sourcefile>
+                    <pick>placemark</pick>
+                </geodata>
+                <geodata name="boundaryplacemarks">
+                    <sourcefile format="KML">boundaryplacemarks</sourcefile>
+                    <pick>placemark</pick>
+                </geodata>
+            </layer>            
+        </map>
+        <settings>
+            <property name="coordinate-grid">
+                <value>true</value>
+                <available>true</available>
+            </property>
+            <property name="overviewmap">
+                <value>true</value>
+                <available>true</available>
+            </property>
+            <property name="compass">
+                <value>true</value>
+                <available>true</available>
+            </property>
+            <property name="scalebar">
+                <value>true</value>
+                <available>true</available>
+            </property>
+            <group name="Texture Layers">
+                <property name="hillshading">
+                    <value>true</value>
+                    <available>true</available>
+                </property>
+                <property name="lighting">
+                    <value>true</value>
+                    <available>true</available>
+                </property>
+            </group>
+        </settings>
+        <legend>
+            <section name="hillshading" checkable="true" connect="hillshading" spacing="12">
+                <heading>Hillshading</heading>
+            </section>
+            <section name="lighting" checkable="true" connect="lighting" spacing="12">
+                <heading>By Night</heading>
+            </section>
+            <section name="coordinate-grid" checkable="true" connect="coordinate-grid" spacing="12">
+                <heading>Coordinate Grid</heading>
+            </section>
+        </legend>
+    </document>
+</dgml>
