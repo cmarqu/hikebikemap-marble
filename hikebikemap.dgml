@@ -8,7 +8,7 @@
             <theme>hikebikemap</theme>
             <icon pixmap="preview.png"/>
             <visible>true</visible>
-            <description><![CDATA[<p>A <i>global hike and bike map</i> with OpenStreetMap data.]]></description>
+            <description><![CDATA[<p>A <i>global hike and bike map</i> with OpenStreetMap (OSM) data.<p>OSM is an open community which creates free editable maps. The Hike&amp;Bike Map was created by Colin Marquardt. The OSM data was rendered using Mapnik.]]></description>
             <zoom>
                 <minimum> 900 </minimum>
                 <maximum> 3700 </maximum>
@@ -20,27 +20,28 @@
             <canvas/>
             <target/>
             <layer name="hikebikemap" backend="texture" >
-                <!-- Let tiles expire after one year or 31536000 seconds -->
+                <!-- seven days == 604800 seconds -->
+                <!-- one year == 31536000 seconds -->
                 <texture name="map" expire="31536000" >
                     <sourcedir format="PNG"> earth/hikebikemap </sourcedir>
-                    <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="Custom" />
+                    <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="OpenStreetMap" />
                     <projection name="Mercator" />
-                    <downloadUrl protocol="http" host="toolserver.org" path="/tiles/hikebike/{zoomLevel}/{x}/{y}.png" />
+                    <downloadUrl protocol="http" host="toolserver.org" path="/tiles/hikebike/" />
                 </texture>
                 <texture name="hillshading" expire="31536000" >
                     <sourcedir format="PNG"> earth/hikebikemap/hillshading </sourcedir>
-                    <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="Custom" />
+                    <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="OpenStreetMap" />
                     <projection name="Mercator" />
-                    <downloadUrl protocol="http" host="toolserver.org" path="/~cmarqu/hill/{zoomLevel}/{x}/{y}.png" />
+                    <downloadUrl protocol="http" host="toolserver.org" path="/~cmarqu/hill/" />
 <!--                    <blending name="ScreenBlending" />-->
 <!--                    <blending name="GammaLightBlending" />-->
                     <blending name="AllanonBlending" />
                 </texture>
                 <texture name="lighting" expire="31536000" >
                     <sourcedir format="PNG"> earth/hikebikemap/lighting </sourcedir>
-                    <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="Custom" />
+                    <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="OpenStreetMap" />
                     <projection name="Mercator" />
-                    <downloadUrl protocol="http" host="toolserver.org" path="/tiles/lighting/{zoomLevel}/{x}/{y}.png" />
+                    <downloadUrl protocol="http" host="toolserver.org" path="/tiles/lighting/" />
 <!--                    <blending name="ScreenBlending" />-->
 <!--                    <blending name="GammaLightBlending" />-->
                     <blending name="AllanonBlending" />
@@ -87,6 +88,16 @@
                 <value>true</value>
                 <available>true</available>
             </property>
+            <group name="Places">
+                <property name="places">
+                    <value>true</value>
+                    <available>true</available>
+                </property>
+                <property name="otherplaces">
+                    <value>true</value>
+                    <available>true</available>
+                </property>
+            </group>
             <group name="Texture Layers">
                 <property name="hillshading">
                     <value>true</value>
@@ -105,7 +116,7 @@
             <section name="lighting" checkable="true" connect="lighting" spacing="12">
                 <heading>By Night</heading>
             </section>
-            <section name="map" checkable="false" connect="map" spacing="12">
+            <section name="mapstyle" checkable="false" spacing="12">
                 <heading>Map Style</heading>
                 <item name="secondary">
                     <icon pixmap="maps/earth/hikebikemap/legend/secondary.png"/>
