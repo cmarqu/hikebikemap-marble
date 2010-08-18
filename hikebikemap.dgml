@@ -93,7 +93,7 @@
                     <available>true</available>
                 </property>
                 <property name="lighting">
-                    <value>true</value>
+                    <value>false</value>
                     <available>true</available>
                 </property>
             </group>
@@ -104,6 +104,57 @@
             </section>
             <section name="lighting" checkable="true" connect="lighting" spacing="12">
                 <heading>By Night</heading>
+            </section>
+            <section name="map" checkable="false" connect="map" spacing="12">
+                <heading>Map Style</heading>
+                <item name="secondary">
+                    <icon pixmap="maps/earth/hikebikemap/legend/secondary.png"/>
+                    <text>Secondary Road</text>
+                </item>
+                <item name="residential">
+                    <icon pixmap="maps/earth/hikebikemap/legend/residential.png"/>
+                    <text>Residential Road</text>
+                </item>
+                <item name="track1">
+                    <icon pixmap="maps/earth/hikebikemap/legend/track1.png"/>
+                    <text>Track Grade 1</text>
+                </item>
+                <item name="track2">
+                    <icon pixmap="maps/earth/hikebikemap/legend/track2.png"/>
+                    <text>Track Grade 2</text>
+                </item>
+                <item name="track3">
+                    <icon pixmap="maps/earth/hikebikemap/legend/track3.png"/>
+                    <text>Track Grade 3</text>
+                </item>
+                <item name="track4">
+                    <icon pixmap="maps/earth/hikebikemap/legend/track4.png"/>
+                    <text>Track Grade 4</text>
+                </item>
+                <item name="track5">
+                    <icon pixmap="maps/earth/hikebikemap/legend/track5.png"/>
+                    <text>Track Grade 5</text>
+                </item>
+                <item name="footway">
+                    <icon pixmap="maps/earth/hikebikemap/legend/footway.png"/>
+                    <text>Footway</text>
+                </item>
+                <item name="path">
+                    <icon pixmap="maps/earth/hikebikemap/legend/path.png"/>
+                    <text>Path</text>
+                </item>
+                <item name="rail">
+                    <icon pixmap="maps/earth/hikebikemap/legend/rail.png"/>
+                    <text>Railway</text>
+                </item>
+                <item name="meadow_stream">
+                    <icon pixmap="maps/earth/hikebikemap/legend/meadow_stream.png"/>
+                    <text>Meadow, Stream</text>
+                </item>
+                <item name="water_allotments">
+                    <icon pixmap="maps/earth/hikebikemap/legend/water_allotments.png"/>
+                    <text>Water, Allotments</text>
+                </item>
             </section>
             <section name="coordinate-grid" checkable="true" connect="coordinate-grid" spacing="12">
                 <heading>Coordinate Grid</heading>
