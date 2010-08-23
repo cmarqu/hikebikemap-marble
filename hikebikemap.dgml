@@ -22,21 +22,21 @@
             <layer name="hikebikemap" backend="texture" >
                 <!-- seven days == 604800 seconds -->
                 <!-- one year == 31536000 seconds -->
-                <texture name="map" expire="31536000" >
+                <texture name="map" expire="604800" >
                     <sourcedir format="PNG"> earth/hikebikemap </sourcedir>
                     <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="OpenStreetMap" />
                     <projection name="Mercator" />
                     <downloadUrl protocol="http" host="toolserver.org" path="/tiles/hikebike/" />
                 </texture>
+<!--
                 <texture name="hillshading" expire="31536000" >
                     <sourcedir format="PNG"> earth/hikebikemap/hillshading </sourcedir>
                     <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="OpenStreetMap" />
                     <projection name="Mercator" />
                     <downloadUrl protocol="http" host="toolserver.org" path="/~cmarqu/hill/" />
-<!--                    <blending name="ScreenBlending" />-->
-<!--                    <blending name="GammaLightBlending" />-->
                     <blending name="AllanonBlending" />
                 </texture>
+-->
                 <texture name="lighting" expire="31536000" >
                     <sourcedir format="PNG"> earth/hikebikemap/lighting </sourcedir>
                     <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="OpenStreetMap" />
@@ -99,10 +99,12 @@
                 </property>
             </group>
             <group name="Texture Layers">
+<!--
                 <property name="hillshading">
                     <value>false</value>
                     <available>true</available>
                 </property>
+-->
                 <property name="lighting">
                     <value>false</value>
                     <available>true</available>
@@ -110,17 +112,23 @@
             </group>
         </settings>
         <legend>
-            <section name="hillshading" checkable="true" connect="hillshading" spacing="12">
-                <heading>Hillshading</heading>
-            </section>
-            <section name="lighting" checkable="true" connect="lighting" spacing="12">
-                <heading>By Night</heading>
-            </section>
             <section name="mapstyle" checkable="false" spacing="12">
                 <heading>Map Style</heading>
+                <item name="motorway">
+                    <icon pixmap="maps/earth/hikebikemap/legend/motorway.png"/>
+                    <text>Motorway</text>
+                </item>
+                <item name="primary">
+                    <icon pixmap="maps/earth/hikebikemap/legend/primary.png"/>
+                    <text>Primary Road</text>
+                </item>
                 <item name="secondary">
                     <icon pixmap="maps/earth/hikebikemap/legend/secondary.png"/>
                     <text>Secondary Road</text>
+                </item>
+                <item name="tertiary">
+                    <icon pixmap="maps/earth/hikebikemap/legend/tertiary.png"/>
+                    <text>Tertiary Road</text>
                 </item>
                 <item name="residential">
                     <icon pixmap="maps/earth/hikebikemap/legend/residential.png"/>
@@ -154,6 +162,18 @@
                     <icon pixmap="maps/earth/hikebikemap/legend/path.png"/>
                     <text>Path</text>
                 </item>
+                <item name="cycleway">
+                    <icon pixmap="maps/earth/hikebikemap/legend/cycleway.png"/>
+                    <text>Cycleway</text>
+                </item>
+                <item name="bridleway">
+                    <icon pixmap="maps/earth/hikebikemap/legend/bridleway.png"/>
+                    <text>Bridleway</text>
+                </item>
+                <item name="access_no">
+                    <icon pixmap="maps/earth/hikebikemap/legend/access_no.png"/>
+                    <text>No access</text>
+                </item>
                 <item name="rail">
                     <icon pixmap="maps/earth/hikebikemap/legend/rail.png"/>
                     <text>Railway</text>
@@ -166,6 +186,22 @@
                     <icon pixmap="maps/earth/hikebikemap/legend/water_allotments.png"/>
                     <text>Water, Allotments</text>
                 </item>
+                <item name="parking_building">
+                    <icon pixmap="maps/earth/hikebikemap/legend/parking_building.png"/>
+                    <text>Parking, Building</text>
+                </item>
+                <item name="power_tower_line">
+                    <icon pixmap="maps/earth/hikebikemap/legend/power_tower_line.png"/>
+                    <text>Power Line</text>
+                </item>
+            </section>
+<!--
+            <section name="hillshading" checkable="true" connect="hillshading">
+                <heading>Hillshading</heading>
+            </section>
+-->
+            <section name="lighting" checkable="true" connect="lighting">
+                <heading>By Night</heading>
             </section>
             <section name="coordinate-grid" checkable="true" connect="coordinate-grid" spacing="12">
                 <heading>Coordinate Grid</heading>
