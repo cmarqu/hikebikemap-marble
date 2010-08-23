@@ -6,7 +6,7 @@
             <name>OSM Hike&amp;Bike Map</name>
             <target>earth</target>
             <theme>hikebikemap</theme>
-            <icon pixmap="preview.png"/>
+            <icon pixmap="hikebikemap-preview.png"/>
             <visible>true</visible>
             <description><![CDATA[<p>A <i>global hike and bike map</i> with OpenStreetMap (OSM) data.<p>OSM is an open community which creates free editable maps. The Hike&amp;Bike Map was created by Colin Marquardt. The OSM data was rendered using Mapnik.]]></description>
             <zoom>
