@@ -28,15 +28,13 @@
                     <projection name="Mercator" />
                     <downloadUrl protocol="http" host="toolserver.org" path="/tiles/hikebike/" />
                 </texture>
-<!--
                 <texture name="hillshading" expire="31536000" >
                     <sourcedir format="PNG"> earth/hikebikemap/hillshading </sourcedir>
                     <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="OpenStreetMap" />
                     <projection name="Mercator" />
                     <downloadUrl protocol="http" host="toolserver.org" path="/~cmarqu/hill/" />
-                    <blending name="AllanonBlending" />
+                    <blending name="AlphaBlending" />
                 </texture>
--->
                 <texture name="lighting" expire="31536000" >
                     <sourcedir format="PNG"> earth/hikebikemap/lighting </sourcedir>
                     <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="OpenStreetMap" />
@@ -99,12 +97,10 @@
                 </property>
             </group>
             <group name="Texture Layers">
-<!--
                 <property name="hillshading">
                     <value>false</value>
                     <available>true</available>
                 </property>
--->
                 <property name="lighting">
                     <value>false</value>
                     <available>true</available>
@@ -195,11 +191,9 @@
                     <text>Power Line</text>
                 </item>
             </section>
-<!--
             <section name="hillshading" checkable="true" connect="hillshading">
                 <heading>Hillshading</heading>
             </section>
--->
             <section name="lighting" checkable="true" connect="lighting">
                 <heading>By Night</heading>
             </section>
