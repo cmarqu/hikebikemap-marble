@@ -8,7 +8,7 @@
             <theme>hikebikemap</theme>
             <icon pixmap="hikebikemap-preview.png"/>
             <visible>true</visible>
-            <description><![CDATA[<p>A <i>global hike and bike map</i> with OpenStreetMap (OSM) data.<p>OSM is an open community which creates free editable maps. The Hike&amp;Bike Map was created by Colin Marquardt. The OSM data was rendered using Mapnik.]]></description>
+            <description><![CDATA[<p>A <i>global hike and bike map</i> with OpenStreetMap (OSM) data.<p>The Hike&amp;Bike Map (http://hikebikemap.de) was created by Colin Marquardt. The OSM data was rendered using Mapnik.]]></description>
             <zoom>
                 <minimum> 900 </minimum>
                 <maximum> 3700 </maximum>
