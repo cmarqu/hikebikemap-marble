@@ -29,14 +29,14 @@
                     <downloadUrl protocol="http" host="toolserver.org" path="/tiles/hikebike/" />
                 </texture>
                 <texture name="hillshading" expire="31536000" >
-                    <sourcedir format="PNG"> earth/hikebikemap/hillshading </sourcedir>
+                    <sourcedir format="PNG"> earth/hillshading </sourcedir>
                     <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="OpenStreetMap" />
                     <projection name="Mercator" />
                     <downloadUrl protocol="http" host="toolserver.org" path="/~cmarqu/hill/" />
                     <blending name="AlphaBlending" />
                 </texture>
                 <texture name="lighting" expire="31536000" >
-                    <sourcedir format="PNG"> earth/hikebikemap/lighting </sourcedir>
+                    <sourcedir format="PNG"> earth/lighting </sourcedir>
                     <storageLayout levelZeroColumns="1" levelZeroRows="1" maximumTileLevel="17" mode="OpenStreetMap" />
                     <projection name="Mercator" />
                     <downloadUrl protocol="http" host="toolserver.org" path="/tiles/lighting/" />
@@ -108,6 +108,15 @@
             </group>
         </settings>
         <legend>
+            <section name="hillshading" checkable="true" connect="hillshading">
+                <heading>Hillshading</heading>
+            </section>
+            <section name="lighting" checkable="true" connect="lighting">
+                <heading>By Night</heading>
+            </section>
+            <section name="coordinate-grid" checkable="true" connect="coordinate-grid" spacing="12">
+                <heading>Coordinate Grid</heading>
+            </section>
             <section name="mapstyle" checkable="false" spacing="12">
                 <heading>Map Style</heading>
                 <item name="motorway">
@@ -190,15 +199,6 @@
                     <icon pixmap="maps/earth/hikebikemap/legend/power_tower_line.png"/>
                     <text>Power Line</text>
                 </item>
-            </section>
-            <section name="hillshading" checkable="true" connect="hillshading">
-                <heading>Hillshading</heading>
-            </section>
-            <section name="lighting" checkable="true" connect="lighting">
-                <heading>By Night</heading>
-            </section>
-            <section name="coordinate-grid" checkable="true" connect="coordinate-grid" spacing="12">
-                <heading>Coordinate Grid</heading>
             </section>
         </legend>
     </document>
